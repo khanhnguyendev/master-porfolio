@@ -2,14 +2,14 @@ name: Build and Deploy
 env:
   CI: false
   GITHUB_USERNAME: ${{ github.repository_owner }}
-  REACT_APP_GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }} # This is automatically set by Github Actions
+  REACT_APP_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is automatically set by Github Actions
   USE_GITHUB_DATA: "true"
-  MEDIUM_USERNAME: "khanhnguyen.vlu" # Change this to your medium username
+  MEDIUM_USERNAME: "saadpasta" # Change this to your medium username
 on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - master
   schedule:
     - cron: "0 12 * * 1" # see https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
 jobs:
@@ -34,7 +34,8 @@ jobs:
           npm install
           npm run build
       - name: Deploy 🚀
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.PAT_TOKEN }}
-          publish_dir: build
+          # GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }} # This is provided by GitHub.
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
