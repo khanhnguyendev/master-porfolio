@@ -57,6 +57,15 @@ const skillsSection = {
     emoji(
       "⚡ Integration of third party services such as Firebase/ AWS / Google Cloud"
     ),
+    emoji(
+      "⚡ Experience in building software with Microservices architecture using Spring Framework, Spring Boot, Spring Cloud, ..."
+    ),
+    emoji(
+      "⚡ Experience with relational databases such as MySQL, PostgreSQL, Oracle and MongoDB"
+    ),
+    emoji(
+      "⚡ Experience with CI/CD tools such as Jenkins, Kubernetes, Gitlab/Github CI, AWS CodePipeline, AWS CodeBuild, AWS CodeDeploy, ..."
+    ),
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
